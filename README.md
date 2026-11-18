@@ -6,7 +6,7 @@ En ligne : https://goliathuus.github.io/contact/
 
 ## Modifier
 
-- **Lien newsletter** : dans `index.html`, remplacer `href="#"` du bouton `id="newsletter"` par l'URL du Google Form.
+- **Lien newsletter** : dans `index.html`, attribut `href` du bouton `id="newsletter"` (Google Form).
 - **Images** : dossier `img/` (photos optimisées pour mobile, logo, icônes, image d'aperçu `og-image.jpg`).
 
 Page statique, sans dépendance : un seul fichier HTML, publié par GitHub Pages (branche `main`, dossier racine).
