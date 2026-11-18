@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SH Course au Large · Suivez l'aventure</title>
+  <meta name="description" content="Seb & Hugues, deux Mini 6.50 pour sensibiliser au don d'organes. Suivez l'aventure sur Instagram, Facebook et par newsletter.">
+  <meta name="theme-color" content="#0e1530">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Aperçu quand le lien est partagé (WhatsApp, Facebook, SMS…) -->
+  <link rel="canonical" href="https://goliathuus.github.io/contact/">
+  <meta property="og:url" content="https://goliathuus.github.io/contact/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="SH Course au Large">
+  <meta property="og:title" content="SH Course au Large · Suivez l'aventure">
+  <meta property="og:description" content="Une Équipe · Deux Bateaux · Un Rêve. Seb & Hugues en Mini 6.50 pour sensibiliser au don d'organes.">
+  <meta property="og:image" content="https://goliathuus.github.io/contact/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="img/favicon-64.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <link rel="preload" as="image" href="img/hero-750.webp" type="image/webp"
+        imagesrcset="img/hero-750.webp 750w, img/hero-1200.webp 1200w" imagesizes="(min-width: 560px) 440px, 100vw">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy-900: #0e1530;
+      --navy-800: #141c36;
+      --navy-600: #212e4f;
+      --green: #4a9e47;        /* vert « Ruban Vert » du site */
+      --green-bright: #3aa637;
+      --green-deep: #2c8329;   /* même vert, assombri pour un texte blanc lisible */
+      --orange: #f2a541;       /* orange du logo SH */
+      --text-3: rgba(255, 255, 255, .62);
+      --line: rgba(255, 255, 255, .12);
+      --mono: Consolas, "Inconsolata", ui-monospace, "SF Mono", Menlo, monospace;
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--navy-900);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 15px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Tout tient sur un écran de téléphone */
+    .page {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      min-height: 100dvh;
+      margin: 0 auto;
+      padding-bottom: max(12px, env(safe-area-inset-bottom));
+      background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 100%);
+      overflow: hidden;
+    }
+
+    /* ---------- Photo ---------- */
+    .hero { position: relative; margin: 0; }
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(14, 21, 48, .3) 0%, rgba(14, 21, 48, 0) 22%),
+        linear-gradient(180deg, rgba(14, 21, 48, 0) 62%, rgba(14, 21, 48, .65) 86%, var(--navy-900) 100%);
+      pointer-events: none;
+    }
+
+    .share {
+      position: absolute;
+      z-index: 2;
+      top: max(12px, env(safe-area-inset-top));
+      right: 12px;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 50%;
+      background: rgba(14, 21, 48, .5);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s, transform .15s var(--ease);
+    }
+    .share:hover { background: rgba(14, 21, 48, .75); }
+    .share:active { transform: scale(.94); }
+    .share svg { width: 20px; height: 20px; }
+
+    /* ---------- Identité ---------- */
+    .intro {
+      position: relative;
+      z-index: 1;
+      padding: 0 22px;
+      text-align: center;
+    }
+    .logo {
+      display: block;
+      width: min(54vw, 220px);
+      height: auto;
+      margin: -38px auto 12px;
+      filter: drop-shadow(0 4px 14px rgba(0, 0, 0, .5));
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(21px, 6.2vw, 26px);
+      font-weight: 700;
+      line-height: 1.22;
+      text-wrap: balance;
+    }
+    .bar {
+      display: block;
+      width: 56px;
+      height: 3px;
+      margin: 14px auto 12px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+    .cause {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .cause svg { flex: none; width: 14px; height: 18px; }
+
+    /* ---------- Boutons ---------- */
+    .links {
+      display: grid;
+      gap: 12px;
+      padding: 26px 18px 0;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 62px;
+      padding: 10px 16px 10px 10px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .055);
+      color: #fff;
+      font-size: 16.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .15s var(--ease), background .2s, border-color .2s;
+      touch-action: manipulation;
+    }
+    .btn:hover { background: rgba(255, 255, 255, .09); border-color: rgba(255, 255, 255, .22); }
+    .btn:active { transform: scale(.975); }
+
+    .btn:focus-visible, .share:focus-visible, .site:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 3px;
+    }
+
+    .btn__icon {
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      color: #fff;
+    }
+    .btn__icon svg { width: 23px; height: 23px; }
+    .btn__label { flex: 1; }
+    .btn__arrow {
+      flex: none;
+      width: 20px;
+      height: 20px;
+      color: var(--text-3);
+      transition: transform .2s var(--ease), color .2s;
+    }
+    .btn:hover .btn__arrow { transform: translateX(3px); color: #fff; }
+
+    /* Newsletter : action principale */
+    .btn--primary {
+      border-color: rgba(74, 158, 71, .9);
+      background: var(--green-deep);
+      box-shadow: 0 10px 28px -8px rgba(58, 166, 55, .55), inset 0 1px 0 rgba(255, 255, 255, .18);
+    }
+    .btn--primary:hover { background: #2f8c2c; border-color: var(--green-bright); }
+    .btn--primary .btn__icon { background: rgba(255, 255, 255, .16); }
+    .btn--primary .btn__arrow { color: #fff; }
+
+    .ico-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+    .ico-fb { background: #1877f2; }
+
+    /* ---------- Lien discret vers le site ---------- */
+    .site {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-height: 44px;
+      margin: auto auto 0;
+      padding: 24px 12px 0;
+      color: var(--text-3);
+      font-size: 13px;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .site:hover { color: #fff; }
+    .site svg { width: 14px; height: 14px; }
+
+    /* ---------- Toast ---------- */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: max(20px, env(safe-area-inset-bottom));
+      z-index: 10;
+      max-width: calc(100% - 32px);
+      padding: 12px 16px;
+      border-left: 3px solid var(--green);
+      border-radius: 10px;
+      background: var(--navy-600);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .45);
+      font-size: 14px;
+      transform: translate(-50%, 140%);
+      opacity: 0;
+      transition: transform .3s var(--ease), opacity .3s;
+      pointer-events: none;
+    }
+    .toast.is-visible { transform: translate(-50%, 0); opacity: 1; }
+
+    /* ---------- Apparition ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        animation: rise .5s var(--ease) both;
+        animation-delay: calc(var(--i, 0) * 60ms);
+      }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+
+    /* Petits écrans (iPhone SE…) : photo un peu moins haute */
+    @media (max-height: 700px) {
+      .hero img { aspect-ratio: 2 / 1; }
+      .links { padding-top: 20px; gap: 10px; }
+    }
+    @media (max-height: 600px) {
+      .hero img { aspect-ratio: 2.4 / 1; }
+      .logo { width: min(46vw, 190px); margin-top: -30px; }
+      .bar { margin: 10px auto 8px; }
+    }
+
+    /* ---------- Ordinateur : la carte flotte sur la photo ---------- */
+    @media (min-width: 560px) {
+      body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        padding: 40px 16px;
+        background-image:
+          linear-gradient(180deg, rgba(14, 21, 48, .55), rgba(14, 21, 48, .85)),
+          url("img/backdrop.jpg");
+        background-image:
+          linear-gradient(180deg, rgba(14, 21, 48, .55), rgba(14, 21, 48, .85)),
+          image-set(url("img/backdrop.webp") type("image/webp"), url("img/backdrop.jpg") type("image/jpeg"));
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .page {
+        min-height: 0;
+        padding-bottom: 16px;
+        border: 1px solid rgba(255, 255, 255, .1);
+        border-radius: 24px;
+        box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .7);
+      }
+      .share { top: 12px; }
+      .logo { width: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <figure class="hero">
+      <picture>
+        <source type="image/webp" srcset="img/hero-750.webp 750w, img/hero-1200.webp 1200w" sizes="(min-width: 560px) 440px, 100vw">
+        <img src="img/hero-750.jpg" srcset="img/hero-750.jpg 750w, img/hero-1200.jpg 1200w" sizes="(min-width: 560px) 440px, 100vw"
+             width="750" height="419" fetchpriority="high"
+             alt="Les deux Mini 6.50 de SH Course au Large sous spi, avec le ruban vert du don d'organes sur les voiles">
+      </picture>
+      <button class="share" type="button" aria-label="Partager cette page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="m7 8 5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+      </button>
+    </figure>
+
+    <header class="intro">
+      <img class="logo reveal" src="img/logo-sh.webp" width="720" height="257" alt="SH Course au large">
+      <h1 class="reveal" style="--i:1">Une Équipe · Deux Bateaux · Un Rêve</h1>
+      <span class="bar reveal" style="--i:2" aria-hidden="true"></span>
+      <p class="cause reveal" style="--i:2">
+        <svg viewBox="0 0 32 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M11 37 20.5 20.5"/>
+          <path d="M21 37 11.6 20.6C9.7 17.2 9 14.6 9 12.6 9 8.5 12 5 16 5s7 3.5 7 7.6c0 2-.7 4.6-2.5 7.9"/>
+        </svg>
+        Pour le don d'organes
+      </p>
+    </header>
+
+    <nav class="links" aria-label="Suivre l'aventure">
+      <!-- ⚓ NEWSLETTER : remplacer href="#" par le lien du Google Form -->
+      <a class="btn btn--primary reveal" style="--i:3" id="newsletter" href="#">
+        <span class="btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+        </span>
+        <span class="btn__label">Recevoir la newsletter</span>
+        <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+
+      <a class="btn reveal" style="--i:4" href="https://www.instagram.com/sh_course_au_large_mini650/">
+        <span class="btn__icon ico-ig" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span class="btn__label">Suivre sur Instagram</span>
+        <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+
+      <a class="btn reveal" style="--i:5" href="https://www.facebook.com/p/SH-course-au-large-mini-650-61566151288118/">
+        <span class="btn__icon ico-fb" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 21.5v-8h2.7l.4-3.1h-3.1V8.4c0-.9.3-1.5 1.6-1.5h1.7V4.1c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.8v3.1h2.7v8h3.1z"/></svg>
+        </span>
+        <span class="btn__label">Suivre sur Facebook</span>
+        <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </nav>
+
+    <a class="site reveal" style="--i:6" href="https://www.sh-courseaularge.fr/">
+      sh-courseaularge.fr
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+    </a>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var toastEl = document.querySelector('.toast');
+      var timer;
+      function toast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.add('is-visible');
+        clearTimeout(timer);
+        timer = setTimeout(function () { toastEl.classList.remove('is-visible'); }, 2600);
+      }
+
+      // Newsletter pas encore branchée : message au lieu d'un lien mort
+      var news = document.getElementById('newsletter');
+      news.addEventListener('click', function (e) {
+        if (news.getAttribute('href') === '#') {
+          e.preventDefault();
+          toast('Les inscriptions ouvrent très bientôt ⛵');
+        }
+      });
+
+      // Partage : feuille de partage native sur mobile, copie du lien sinon
+      document.querySelector('.share').addEventListener('click', function () {
+        var data = { title: 'SH Course au Large', text: 'Suivez Seb & Hugues en Mini 6.50 ⛵', url: location.href };
+        if (navigator.share) {
+          navigator.share(data).catch(function () {});
+          return;
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(location.href)
+            .then(function () { toast('Lien copié !'); })
+            .catch(function () { toast(location.href); });
+        } else {
+          toast(location.href);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
